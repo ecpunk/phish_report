@@ -6,9 +6,11 @@
 3. [Installation and Usage](#installation-and-usage)
    - [For Individual Gmail Accounts](#for-individual-gmail-accounts)
    - [For Google Workspace (G Suite) Organizations](#for-google-workspace-g-suite-organizations)
-4. [Monitoring Reported Messages in an Organization](#monitoring-reported-messages-in-an-organization)
-5. [Contributions](#contributions)
-6. [License](#license)
+4. [Actions Upon Email Submission](#actions-upon-email-submission)
+5. [Monitoring Reported Messages in an Organization](#monitoring-reported-messages-in-an-organization)
+6. [Contributions](#contributions)
+7. [License](#license)
+8. [Disclaimer](#disclaimer)
 
 ## Overview
 This Gmail Add-on enhances Gmail's functionality by enabling users to report suspicious emails as phishing or spam. It integrates a custom interface in Gmail, allowing users to report emails directly to a predefined address and organize their inbox by categorizing reported emails.
@@ -19,7 +21,7 @@ This Gmail Add-on enhances Gmail's functionality by enabling users to report sus
 
 ## Installation and Usage
 
-### For Individual Gmail Accounts (must be completed for Workspace accounts also)
+### For Individual Gmail Accounts
 1. **Open Google Apps Script**:
    - Go to [Google Apps Script](https://script.google.com) and click `New Project`.
 
@@ -60,11 +62,30 @@ Before deploying the add-on to a Google Workspace, ensure that the Google Apps S
 4. **Notify Users**:
    - Inform users in your organization about the add-on and its usage.
 
+## Actions Upon Email Submission
+When a user reports an email using this add-on, the following actions are triggered:
+
+### 1. Send Email Notification
+   - An email is sent to a predefined address (e.g., `phishing@mimecast.org`) with the subject "Phishing Reported" or "Spam Reported".
+   - The reported email is attached as a `.eml` file using the raw content of the original email.
+
+### 2. Move Email to Trash or Spam
+   - For phishing reports, the reported email is moved to the trash.
+   - For spam reports, the entire email thread is moved to the spam folder.
+
+### 3. User Notification
+   - The user receives a notification within the add-on interface, such as "Thank you for reporting this email!", as indicated in the `e.parameters.notifyText` parameter.
+
+These automated actions ensure that reported emails are appropriately handled and logged, enhancing the security and management of email communications.
+
 ## Monitoring Reported Messages in an Organization
 Organizations wishing to monitor messages reported through this add-on can configure Mimecast content examination policies to capture these reported messages. By setting up a policy that looks for specific terms such as "Spam Reported" or "Phishing Reported," administrators can track and manage reported emails. Further actions, such as notifying an administrator or other tailored responses, can be configured within Mimecast as needed.
 
 ## Contributions
-We welcome contributions to this project. Please submit pull requests or issues for new features, bug fixes, or suggestions.
+We welcome contributions to this project. Please submit pull requests or issues for new features, bug fixes, or suggestions. Your input and feedback are valued and help improve the tool.
 
 ## License
-[MIT License](LICENSE)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Disclaimer
+This Gmail Add-on is not associated with Mimecast in any way. It is an independent project developed to enhance email reporting functionality. Users should deploy and use this add-on at their own risk. Please review and test the code thoroughly before implementation.
