@@ -1,0 +1,28 @@
+{
+    "timeZone": "America/New_York",
+    "dependencies": {
+      "enabledAdvancedServices": [
+        {
+          "userSymbol": "Gmail",
+          "serviceId": "gmail",
+          "version": "v1"
+        }
+      ]
+    },
+    "oauthScopes": [
+      "https://mail.google.com/",
+      "https://www.googleapis.com/auth/gmail.addons.execute"
+    ],
+    "gmail": {
+      "name": "Mimecast",
+      "logoUrl": "https://ei-vapor-production-storage.s3.amazonaws.com/product_images/h2IYDWMOgbZbeYY4ZgQkPySobjpEEUVHkDAOJvhB.png",
+      "contextualTriggers": [
+        {
+          "unconditional": {},
+          "onTriggerFunction": "getContextualAddOn"
+        }
+      ],
+      "primaryColor": "#01003E",
+      "secondaryColor": "#01003E"
+    }
+  }
