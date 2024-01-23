@@ -1,54 +1,58 @@
-# Phish Report - Google Apps Script
+# Phish Report - Gmail Add-on
 
 ## Overview
-This repository contains a Google Apps Script and its corresponding manifest file designed to enhance Gmail's functionality by allowing users to report suspicious emails as phishing or spam. The script adds a custom interface in Gmail, enabling users to report emails directly to a predefined address, and organize their inbox by moving reported emails to appropriate folders.
+This Gmail Add-on enhances Gmail's functionality by enabling users to report suspicious emails as phishing or spam. It integrates a custom interface in Gmail, allowing users to report emails directly to a predefined address and organize their inbox by categorizing reported emails.
 
 ## Contents
-- `script.js`: The main Google Apps Script file containing the logic for the Gmail add-on.
-- `manifest.json`: The manifest file specifying configuration, permissions, and triggers for the Google Apps Script.
+- `script.js`: The Google Apps Script file containing the logic for the Gmail add-on.
+- `manifest.json`: The manifest file for the add-on, specifying configurations, permissions, and triggers.
 
-## Installation
-To use these files, follow these steps:
+## Installation and Usage
 
-### Setting Up the Script in Google Apps Script
+### For Individual Gmail Accounts
 1. **Open Google Apps Script**:
-   - Navigate to [Google Apps Script](https://script.google.com).
-   - Click on `New Project`.
+   - Go to [Google Apps Script](https://script.google.com) and click `New Project`.
 
-2. **Copy the Script**:
+2. **Copy and Paste the Script**:
    - Open `script.js` from this repository.
-   - Copy the contents of the file.
-   - Paste the contents into the script editor in Google Apps Script.
+   - Copy and paste the content into the script editor.
 
-3. **Save the Script**:
-   - Name your project, for example, `PhishReport`.
-   - Click the floppy disk icon or File > Save.
-
-### Adding the Manifest File
-1. **Open the Manifest Editor**:
-   - In Google Apps Script, click on `View` > `Show manifest file`.
-   - This will open the `appsscript.json` file.
-
-2. **Replace with Custom Manifest**:
+3. **Add the Manifest File**:
+   - In Google Apps Script, click `View` > `Show manifest file` (`appsscript.json`).
    - Open `manifest.json` from this repository.
-   - Copy the contents and replace the content in `appsscript.json` with it.
+   - Replace the content in `appsscript.json` with the copied content.
 
-3. **Save Your Changes**:
-   - Click the floppy disk icon or File > Save.
+4. **Deploy as Web App**:
+   - Click on `Deploy` > `New deployment`.
+   - Choose `Web app`, fill in the details, and deploy.
+   - Authorize the script with your Google account.
 
-## Usage
-After setting up the script and manifest file in Google Apps Script, the add-on will be available in your Gmail. Here's how to use it:
+5. **Use the Add-on**:
+   - The add-on will be available in your Gmail.
+   - Use the buttons to report emails as phishing or spam.
 
-1. **Open Gmail**:
-   - Go to your Gmail account where you want to use the add-on.
+### For Google Workspace (G Suite) Organizations
+1. **Publish the Add-on**:
+   - Create and link a Cloud Project in [Google Cloud Console](https://console.cloud.google.com/).
+   - Link this project to your Apps Script project.
+   - Publish the add-on, choosing to publish for your domain only.
 
-2. **Using the Add-on**:
-   - The add-on should appear in the Gmail interface.
-   - When viewing an email, you can use the provided buttons to report the email as phishing or spam.
-   - Reporting will automatically send an email to a predefined address and move the reported email to the appropriate folder.
+2. **Deploy Domain-Wide in Google Workspace**:
+   - As an admin, go to the [Google Workspace Admin console](https://admin.google.com/).
+   - Navigate to `Apps` > `Google Workspace Marketplace apps`.
+   - Add the app from the Marketplace to your domain.
+
+3. **Manage Settings**:
+   - Configure who in your domain has access and whether the add-on is enabled or disabled by default.
+
+4. **Notify Users**:
+   - Inform users in your organization about the add-on and its usage.
+
+### Monitoring Reported Messages in an Organization
+Organizations wishing to monitor messages reported through this add-on can configure Mimecast content examination policies to capture these reported messages. By setting up a policy that looks for specific terms such as "Spam Reported" or "Phishing Reported," administrators can track and manage reported emails. Further actions, such as notifying an administrator or other tailored responses, can be configured within Mimecast as needed.
 
 ## Contributions
-Contributions to this project are welcome. Please create a pull request or issue in this repository for any features, bug fixes, or suggestions.
+We welcome contributions to this project. Please submit pull requests or issues for new features, bug fixes, or suggestions.
 
 ## License
 [MIT License](LICENSE)
