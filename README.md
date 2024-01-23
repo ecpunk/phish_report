@@ -19,7 +19,7 @@ This Gmail Add-on enhances Gmail's functionality by enabling users to report sus
 
 ## Installation and Usage
 
-### For Individual Gmail Accounts
+### For Individual Gmail Accounts (must be completed for Workspace accounts also)
 1. **Open Google Apps Script**:
    - Go to [Google Apps Script](https://script.google.com) and click `New Project`.
 
