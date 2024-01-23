@@ -49,7 +49,7 @@ This Gmail Add-on enhances Gmail's functionality by enabling users to report sus
    - Inform users in your organization about the add-on and its usage.
 
 ### Monitoring Reported Messages in an Organization
-Organizations wishing to monitor messages reported through this add-on can configure Mimecast content examination policies to capture these reported messages. By setting up a policy that looks for specific terms such as "Spam Reported" or "Phishing Reported," administrators can track and manage reported emails. Further actions, such as notifying an administrator or other tailored responses, can be configured within Mimecast as needed.
+Organizations wishing to monitor messages reported through this add-on can configure Mimecast content examination policies to capture these reported messages. By setting up a policy that looks for specific terms "Spam Reported" or "Phishing Reported," administrators can track and manage reported emails. Further actions, such as notifying an administrator or other tailored responses, can be configured within Mimecast as needed.
 
 ## Contributions
 We welcome contributions to this project. Please submit pull requests or issues for new features, bug fixes, or suggestions.
