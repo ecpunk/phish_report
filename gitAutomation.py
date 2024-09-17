@@ -46,7 +46,7 @@ def check_git_repository():
     return subprocess.call(["git", "rev-parse", "--is-inside-work-tree"]) == 0
 
 def main():
-    credentials_file = "/Users/jon/Desktop/code/github_credentials.txt"
+    credentials_file = "/github_credentials.txt"
     username, token = read_github_credentials(credentials_file)
     repo_name = os.path.basename(os.path.abspath('.'))
 
